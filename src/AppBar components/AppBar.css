@@ -1,0 +1,95 @@
+.app-bar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.app-bar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-section {
+    flex: 1;
+}
+
+.greeting {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.subtitle {
+    font-size: 14px;
+    margin: 4px 0 0 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Loading skeletons */
+.skeleton-text {
+    width: 200px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-bar-content {
+        padding: 0 16px;
+    }
+
+    .greeting {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .greeting {
+        font-size: 18px;
+    }
+
+    .subtitle {
+        display: none;
+    }
+}

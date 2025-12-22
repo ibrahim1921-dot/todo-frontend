@@ -2,13 +2,13 @@ const getApiUrl = () => {
     // check if we are in production or development
     if(import.meta.env.PROD) {
         return (
-          import.meta.env.VITE_API_URL_PROD ||
-          "https://todo-backend-nsrf.onrender.com"
+          import.meta.env.VITE_API_URL ||
+          "https://todo-backend-staging.onrender.com"
         );
     }
 
     return (
-      import.meta.env.VITE_API_URL|| "http://localhost:5000"
+      import.meta.env.VITE_API_URL_DEV|| "http://localhost:5000"
     );
 }
 

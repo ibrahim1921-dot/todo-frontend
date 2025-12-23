@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import InputField from "../Registration components/InputField";
-import "./LoginForm.css";
+import React, { useState } from 'react';
+import InputField from '../Registration components/InputField';
+import './LoginForm.css';
 
 const LoginForm = ({ onSubmit, loading, onForgotPassword }) => {
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: ''
   });
 
   const [errors, setErrors] = useState({});
@@ -18,14 +18,14 @@ const LoginForm = ({ onSubmit, loading, onForgotPassword }) => {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = 'Email is required';
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Invalid email format";
+      newErrors.email = 'Invalid email format';
     }
 
     // Password validation
     if (!formData.password) {
-      newErrors.password = "Password is required";
+      newErrors.password = 'Password is required';
     }
 
     setErrors(newErrors);
@@ -34,29 +34,29 @@ const LoginForm = ({ onSubmit, loading, onForgotPassword }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
-      [name]: value,
+      [name]: value
     }));
-
+    
     if (errors[name]) {
-      setErrors((prev) => ({
+      setErrors(prev => ({
         ...prev,
-        [name]: "",
+        [name]: ''
       }));
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     if (validateForm()) {
       onSubmit({ ...formData, rememberMe });
     }
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       handleSubmit(e);
     }
   };
@@ -102,9 +102,9 @@ const LoginForm = ({ onSubmit, loading, onForgotPassword }) => {
           />
           <span>Remember me</span>
         </label>
-
-        <button
-          type="button"
+        
+        <button 
+          type="button" 
           className="forgot-password-link"
           onClick={onForgotPassword}
           disabled={loading}
@@ -113,14 +113,18 @@ const LoginForm = ({ onSubmit, loading, onForgotPassword }) => {
         </button>
       </div>
 
-      <button type="submit" className="submit-button" disabled={loading}>
+      <button 
+        type="submit" 
+        className="submit-button"
+        disabled={loading}
+      >
         {loading ? (
           <>
             <span className="spinner"></span>
             Signing in...
           </>
         ) : (
-          "Sign In"
+          'Sign In'
         )}
       </button>
     </form>

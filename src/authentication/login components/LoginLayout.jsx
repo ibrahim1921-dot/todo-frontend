@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import GoogleAuthButton from "../Registration components/GoogleAuthButton";
 import { API_URL } from "../../config";
+import { Link } from "react-router-dom";
 import "./LoginLayout.css";
 
 const LoginLayout = ({ onAuthSuccess }) => {
@@ -81,7 +82,7 @@ const LoginLayout = ({ onAuthSuccess }) => {
 
         <div className="register-redirect">
           <p>
-            Don't have an account? <a href="/register">Sign up</a>
+            Don't have an account? <Link to= "/register">Sign up</Link>
           </p>
         </div>
       </div>
